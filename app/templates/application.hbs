@@ -1,0 +1,58 @@
+<main>
+  <h3>This is a test application playing with EMBER OCTANE</h3>
+<table>
+  <thead>
+  <tr>
+    <th>Date</th>
+    <th>Title</th>
+    <th>Version</th>
+  </tr>
+  </thead>
+  <tbody>
+    {{#each this.itRdNews as |v|}}
+      <tr>
+      <td>{{v.date}}</td>
+      <td>{{v.title}}</td>
+      <td>{{v.version}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<hr>
+<div>
+  Count: {{this.count}}
+  stringArr: {{this.stringName}}
+  <br/>
+  <button {{on 'click' this.increment}}>Click to increase</button>
+  <button {{on 'click' this.decrement}}>Click to decrease</button>
+  <button {{on 'click' this.message}}>Add message</button>
+</div>
+<hr>
+<div>
+  <h3>You have Entered:</h3>
+  <ul>
+    <li onchange={{this.getDate}}>{{this.date}}</li>
+    <li>{{this.title}}</li>
+    <li>{{this.version}}</li>
+  </ul>
+</div>
+<section>
+  <div>
+    <label for="">date</label>
+    <input type="text" value={{this.date}} onchange={{this.handleDate}} >
+  </div>
+  <div>
+    <label for="">title</label>
+    <input type="text" value={{this.title}} onchange={{this.handleTitle}} >
+  </div>
+  <div>
+    <label for="">version</label>
+    <input type="text" value={{this.version}} onchange={{this.handleVersion}} >
+  </div>
+  <div>
+    <button {{on 'click' this.submitForm}}>Submit</button>
+  </div>
+</section>
+</main>
+{{outlet}}
+
