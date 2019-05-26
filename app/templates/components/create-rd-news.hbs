@@ -1,1 +1,32 @@
 {{yield}}
+<section>
+ <h2>Create IT RD NEWS</h2>
+
+ <button id="myBtn" {{action this.createModal}}>Create</button>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" {{action this.closeModal}}>&times;</span>
+  <!--    <form class="createForm">-->
+        <div>
+          <label for="">date</label>
+          <input type="text">
+        </div>
+      <TitleComp @title={{@titleVal}} @onChangeTitle={{@onchangeTitle}}/>
+        <div>
+          <label for="">title</label>
+          <input type="text" value={{@titleVal}} onchange={{@onchangeTitle}} >
+        </div>
+        <div>
+          <label for="">version</label>
+          <input type="text">
+        </div>
+        <div>
+          <button>Submit</button>
+        </div>
+  <!--    </form>-->
+    </div>
+  </div>
+</section>
