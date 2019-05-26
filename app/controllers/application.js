@@ -1,8 +1,10 @@
 import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default class ApplicationController extends Controller {
+  @service('create-modal') modal;
   @tracked count = 0;
   @tracked stringName;
   // INPUT TESTS TACKED PROPERTIES
@@ -47,6 +49,17 @@ export default class ApplicationController extends Controller {
     e.preventDefault();
     console.log(`State Date: ${this.date},${this.title},${this.version}`)
   }
+  @action generateModal(props){
+    console.log(props);
+    return this.modal.editAction(props.title,props.date,props.version);
+  }
+
+  @action editModal(props){
+    console.log(props);
+    console.log(this.args.props);
+  }
+
+
 // Static array of objects for demo purposes
   itRdNews=[
     {
