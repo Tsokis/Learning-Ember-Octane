@@ -6,14 +6,20 @@
     <th>Date</th>
     <th>Title</th>
     <th>Version</th>
+    <th>Actions</th>
   </tr>
   </thead>
   <tbody>
     {{#each this.itRdNews as |v|}}
       <tr>
-      <td>{{v.date}}</td>
-      <td>{{v.title}}</td>
-      <td>{{v.version}}</td>
+        <td>{{v.date}}</td>
+        <td>{{v.title}}</td>
+        <td>{{v.version}}</td>
+        <td>
+          <button onclick={{action this.generateModal v}}>Edit from Service</button>
+          <section id="modalaki"></section>
+          <EditAction @values={{v}} @act={{this.editModal}} ...arguments />
+        </td>
       </tr>
     {{/each}}
   </tbody>
@@ -56,4 +62,6 @@
   <CreateRdNews @titleVal={{this.title}} @onchangeTitle={{this.handleTitle}}/>
 </main>
 {{outlet}}
+<hr>
+
 
