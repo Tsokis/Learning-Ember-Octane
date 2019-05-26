@@ -53,6 +53,7 @@
     <button {{on 'click' this.submitForm}}>Submit</button>
   </div>
 </section>
+  <CreateRdNews @titleVal={{this.title}} @onchangeTitle={{this.handleTitle}}/>
 </main>
 {{outlet}}
 
