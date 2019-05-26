@@ -1,0 +1,24 @@
+{{yield}}
+<section class="edit-modal toggle">
+  {{#if this.toggleModal}}
+    <button {{action this.closeModal}}>X</button>
+    <h3>Edit Rd news</h3>
+    <div>
+      <label for="date">Date</label><br>
+      <input type="text" value={{@values.date}} >
+    </div>
+    <div>
+      <label for="title">Title</label><br>
+      <input type="text" value={{@values.title}} >
+    </div>
+    <div>
+      <label for="version">Version</label><br>
+      <textarea name="version" id="mversion" cols="30" rows="10">{{@values.version}}</textarea>
+    </div>
+    <div>
+      <button>Submit</button>
+    </div>
+  {{else}}
+  <button onclick={{action this.toggler}}>Edit modal from component</button>
+  {{/if}}
+</section>
