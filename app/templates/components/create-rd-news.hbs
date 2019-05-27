@@ -2,7 +2,7 @@
 <section>
  <h2>Create IT RD NEWS</h2>
 
- <button id="myBtn" {{action this.createModal}}>Create</button>
+ <button id="myBtn" class="btn" {{action this.createModal}}>Create</button>
 
   <!-- Modal -->
   <div id="myModal" class="modal">
@@ -11,20 +11,20 @@
       <span class="close" {{action this.closeModal}}>&times;</span>
   <!--    <form class="createForm">-->
         <div>
-          <label for="">date</label>
-          <input type="text">
+          <label for="">Date</label><br>
+          <input type="text" value={{@dateVal}} onchange={{@onChangeDate}}>
         </div>
       <TitleComp @title={{@titleVal}} @onChangeTitle={{@onchangeTitle}}/>
         <div>
-          <label for="">title</label>
+          <label for="">Title</label><br>
           <input type="text" value={{@titleVal}} onchange={{@onchangeTitle}} >
         </div>
         <div>
-          <label for="">version</label>
-          <input type="text">
+          <label for="">Version</label><br>
+          <textarea name="" id="textareaVersion" cols="30" rows="10" onchange={{@onChangeVersion}}>{{@versionVal}}</textarea>
         </div>
         <div>
-          <button>Submit</button>
+          <button onclick={{action this.submitForm}}>Submit</button>
         </div>
   <!--    </form>-->
     </div>
