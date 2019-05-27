@@ -25,6 +25,9 @@ export default class ApplicationController extends Controller {
   @action getDate(){
     return this.date;
   }
+  @action refresh(){
+    return document.location.reload(true);
+  }
 
   @action message(){
     let m = prompt('Enter something!!');
@@ -47,7 +50,7 @@ export default class ApplicationController extends Controller {
 
   @action submitForm(e){
     e.preventDefault();
-    console.log(`State Date: ${this.date},${this.title},${this.version}`)
+    console.log(`State: ${this.date},${this.title},${this.version}`)
   }
   @action generateModal(props){
     console.log(props);
@@ -73,6 +76,19 @@ export default class ApplicationController extends Controller {
       date: '12/07/18',
       title:'Ui',
       version:'Ui bugs fixed v0.2.0'
+    },
+    {
+      id:3,
+      date: '22/11/18',
+      title:'Filters on news page',
+      version:'Data filters have been fixed and the ui have been updated v.0.3.0'
+    },
+    {
+      id:4,
+      date: '19/05/19',
+      title:'images',
+      version:'v.0.4.0'
     }
+
   ]
 }
