@@ -7,14 +7,34 @@ export default class ApplicationController extends Controller {
   @service('create-modal') modal;
   @tracked count = 0;
   @tracked stringName;
+  @tracked turtle;
+  /* date picker tracked */
+  @tracked dateNow;
+  @tracked datepicker;
   // INPUT TESTS TACKED PROPERTIES
   @tracked title;
   @tracked date;
   @tracked version;
 
+/* get current date */
+  get defaultDate(){
+    return this.dateNow = new Date();
+  }
   /**
    *    ACTIONS
    */
+  @action doSomethingWithSelectedValue(){
+    return this.defaultDate;
+  }
+
+
+  /* Get current day month year */
+  @action changa(props){
+    console.log(props);
+    this.datepicker = props.firstObject;
+    console.log(this.datepicker);
+  }
+
   @action increment() {
     this.count++;
   }
