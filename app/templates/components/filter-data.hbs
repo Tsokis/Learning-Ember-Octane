@@ -1,14 +1,14 @@
 <section class="filter-data">
     <div>
       <label for="fdate">filter Date</label>
-      <input type="text" onchange={{action this.filterInputDate @data}} id="filter-date" value={{this.fdate}} >
+      <input type="text" onchange={{action this.filterInputDate @data}} id="filter-date" value={{this.fdate}}>
     </div>
   <div>
     <label for="ftitle">filter Title</label>
-    <input type="text">
+    <input type="text" onchange={{action this.filterInputTitle @data}} id="filter-title" value={{this.ftitle}}>
   </div>
   <div>
     <label for="fversion">filter Version</label>
-    <input type="text" >
+    <input type="text" onchange={{action this.filterInputVersion @data}} id="filter-title" value={{this.fversion}}>
   </div>
 </section>
