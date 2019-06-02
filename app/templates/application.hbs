@@ -1,4 +1,31 @@
 <main class="rd-app">
+  <h3>flatpickr ready</h3>
+  {{ember-flatpickr
+    date=(readonly defaultDate)
+    dateFormat='D/M/Y'
+    placeholder='Choose a Date'
+    defaultDate=this.defaultDate
+    onChange=this.changa
+    getFlatpickrRef=(action (mut flatpickrRef))
+  }}
+  <h3>Get Data</h3>
+  <hr>
+  <h3>PikaDay</h3>
+  <label>
+    1) Start date:
+    <PikadayInput onSelection={{action 'doSomethingWithSelectedValue'}} placeholder="dscds" format="MM/DD/YYYY" />
+  </label>
+  <label>
+   2) Start date:
+    {{pikaday-input readonly="readonly"}}
+  </label>
+
+  {{#if this.turtle}}
+    <span>The value i have passed in is: </span>
+    {{else}}
+    <button onclick={{action (mut this.turtle) "I'm a ninja"}}>Transform!!!</button>
+  {{/if}}
+  {{this.turtle}}
   <h3>This is a test application playing with EMBER OCTANE</h3>
   <FilterData @data={{this.itRdNews}} ...arguments  />
   <CreateRdNews
@@ -23,8 +50,8 @@
     {{#each this.itRdNews as |v|}}
       <tr class="trbody">
         <td class="date">{{v.date}}</td>
-        <td>{{v.title}}</td>
-        <td>{{v.version}}</td>
+        <td class="title">{{v.title}}</td>
+        <td class="version">{{v.version}}</td>
         <td>
           <button onclick={{action this.generateModal v}}>Edit from Service</button>
           <section id="modalaki"></section>
@@ -72,5 +99,3 @@
 </main>
 {{outlet}}
 <hr>
-
-
