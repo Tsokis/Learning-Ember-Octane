@@ -8,6 +8,7 @@ export default class ApplicationController extends Controller {
   @tracked count = 0;
   @tracked stringName;
   @tracked turtle;
+  @tracked testArr;
   /* date picker tracked */
   @tracked dateNow;
   @tracked datepicker;
@@ -19,6 +20,10 @@ export default class ApplicationController extends Controller {
 /* get current date */
   get defaultDate(){
     return this.dateNow = new Date();
+  }
+
+  get dataArr(){
+    return this.testArr = this.itRdNews;
   }
   /**
    *    ACTIONS
@@ -82,7 +87,6 @@ export default class ApplicationController extends Controller {
     console.log(this.args.props);
   }
 
-
 // Static array of objects for demo purposes
   itRdNews=[
     {
@@ -110,5 +114,5 @@ export default class ApplicationController extends Controller {
       version:'v.0.4.0'
     }
 
-  ]
+  ];
 }
