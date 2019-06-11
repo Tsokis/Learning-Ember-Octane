@@ -1,0 +1,55 @@
+{{yield}}
+<p class="sassyParagraph" {{on 'click' this.showMe }}>Toogle div <i class="fa-fa">{{if this.toggleText 'Show me Please' 'You can Hide Me Now '}}</i></p>
+
+<div class="test-div {{this.objClassName.class}}">
+  <p>I'm changing from the component state <small>Tracked property</small> </p>
+</div>
+<hr>
+<div class="tab">
+  <button class="tablink">{{this.state.today}}</button>
+  <button class="tablink">{{this.state.week}}</button>
+  <button class="tablink">{{this.state.month}}</button>
+</div>
+<hr>
+<div id="today" class="tabContent">
+  <h3>Today</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, quisquam.</p>
+</div>
+<div id="week" class="tabContent">
+  <h3>Week</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, praesentium!</p>
+</div>
+<div id="month" class="tabContent">
+  <h3>Month</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, vero!</p>
+</div>
+<div class="{{this.objClassName.class}}">
+  <p><strong>I'm another div with just the dynamic class this time </strong> <i>NO DISPLAY BLOCK AND NONE</i> </p>
+</div>
+<p>This is made with Sass</p>
+<article class="card">
+  <header class="card_header">
+    <img src="http://placehold.it/350x200"  class="card_image" alt="Card Image" />
+  </header>
+
+  <div class="card_body">
+    <h2 class="card_title">
+      Some Title
+    </h2>
+    <p class="card_subtitle">
+      You need an additional title?
+    </p>
+    <p class="card_intro">
+      Your Info
+    </p>
+  </div>
+  <footer class="card_footer">
+    This is the card's footer area
+  </footer>
+</article>
+
+<section class="card_flip">
+  <div class="card_flip_header">Header</div>
+  <div class="card_flip_body">Body</div>
+  <div class="card_flip_footer">Footer</div>
+</section>
