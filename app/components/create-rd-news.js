@@ -10,11 +10,18 @@ export default class CreateRdNewsComponent extends Component {
   @action closeModal(){
     return document.querySelector('.modal').style.display='none';
   }
-  @action submitForm(){
-    console.log(this.args);
-    return console.log(`Form has been submitted with 
-    date:${this.args.dateVal},
-    title:${this.args.titleVal} 
-    and version ${this.args.versionVal}`)
+  // temporary display if you refresh the page it will be lost
+  @action submitForm(props){
+    console.log(props);
+    let passedObject =
+    {
+        id:5,
+        date: this.args.dataVal,
+        title:this.args.titleVal,
+        version:this.args.versionVal
+    };
+    console.log(passedObject);
+    this.args.dataArr.addObject(passedObject);
+    console.log(this.args.dataArr);
   }
 }
