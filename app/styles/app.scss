@@ -1,0 +1,318 @@
+
+@import "ember-power-select";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+$primary-background-color: green;
+$secondary-bg-color: #afafaf;
+$someColor: #473030;
+
+/* testing sass */
+.sassy {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $primary-background-color;
+}
+
+.modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+}
+
+.edit-modal{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  .edit-modal-content{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  &:hover{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.rd-app {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* Zebra striping */
+  tr:nth-of-type(odd) {
+    background: #eee;
+  }
+  th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+  }
+  td, th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+}
+/* filter class selected when an item is found */
+.selected {
+  /*display: block !important;*/
+  font-weight: bold;
+  background-color: #2b81af;
+  color: #000;
+}
+
+.hide{
+  display: none;
+}
+
+.tab{
+  overflow: hidden;
+  border: 1px solid black;
+  background-color: #f1f1f1;
+}
+.tabContent{
+  margin-bottom: 1.2rem;
+}
+
+nav {
+  width: 100%;
+  background-color: lightgrey;
+  color: white;
+  margin-bottom: 1rem;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li { display: inline-block; }
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+.box { @include transform(rotate(30deg)); }
+
+.card{
+  display: inline-block;
+  width: 100%;
+  max-width: 350px;
+  margin: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  background: #fff;
+  box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.2);
+  &:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 20px 20px -15px rgba(0, 0, 0, 0.3);
+  }
+  &_image {
+    max-width: 100%;
+  }
+  &_footer{
+    padding: 20px;
+    border-top: 1px solid #ddd;
+
+  }
+  &_body{
+    padding: 20px;
+  }
+  &_title{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+
+  }
+  &_subtitle{
+    font-size: 13px;
+    margin-top: 5px;
+    padding: 0;
+  }
+  &_intro{
+    margin-bottom: 0;
+  }
+}
+
+.card_flip{
+  width: 450px;
+  height: 250px;
+  margin: 20px auto;
+  cursor: pointer;
+  &_header{
+    position: relative;
+    transition: 0.8s ease-in-out;
+    transform-style: preserve-3d;
+  }
+  &_body{
+
+  }
+  &_foorer{
+
+  }
+
+
+  &:hover{
+    transform: rotateY(180deg);
+  }
+
+}
+
+.active{
+  padding: 20px;
+  background-color: $secondary-bg-color;
+  color: $someColor;
+  &:hover{
+  background-color: #2b81af;
+  color: white;
+  }
+}
+
+.sassyParagraph{
+  background-color: #3a33d1;
+  color: #ffffff;
+  font-family: 'Raleway',sans-serif;
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 72px;
+  margin: 0 0 24px;
+  .fa-fa{
+    background-color: #111111;
+    color: #afafaf;
+    &:hover{
+      background-color: lightgrey;
+      color: white;
+    }
+  }
+}
+
+/** Media Queries **/
+@media (min-width: 768px) {
+  .rd-app {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .rd-app {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .rd-app {
+    width: 1170px;
+  }
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr { border: 1px solid #ccc; }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /*
+    Label the data
+    */
+  td:nth-of-type(1):before { content: "Date"; }
+  td:nth-of-type(2):before { content: "Title"; }
+  td:nth-of-type(3):before { content: "Version"; }
+  td:nth-of-type(4):before { content: "Actions"; }
+  td:nth-of-type(5):before { content: "null"; }
+  td:nth-of-type(6):before { content: "null Alias"; }
+  td:nth-of-type(7):before { content: "null"; }
+  td:nth-of-type(8):before { content: "null Vacation City"; }
+  td:nth-of-type(9):before { content: "null"; }
+  td:nth-of-type(10):before { content: "null"; }
+}
+
+
+
+
+
+
+
+
