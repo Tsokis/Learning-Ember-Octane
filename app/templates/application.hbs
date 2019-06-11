@@ -1,4 +1,13 @@
+<nav>
+  <ul>
+    <li><a href="">Route1 placeholder</a></li>
+    <li><a href="">Route2 placeholder</a></li>
+    <li><a href="">Route3 placeholder</a></li>
+  </ul>
+</nav>
+
 <main class="rd-app">
+  <Tabs />
   <h3>flatpickr ready</h3>
   {{ember-flatpickr
     date=(readonly defaultDate)
@@ -19,6 +28,9 @@
    2) Start date:
     {{pikaday-input readonly="readonly"}}
   </label>
+  <div class="sassy">
+    test sassy
+  </div>
 
   {{#if this.turtle}}
     <span>The value i have passed in is: </span>
@@ -29,6 +41,7 @@
   <h3>This is a test application playing with EMBER OCTANE</h3>
   <FilterData @data={{this.itRdNews}} ...arguments  />
   <CreateRdNews
+    @dataArr={{this.dataArr}}
     @dateVal={{this.date}}
     @onChangeDate={{this.handleDate}}
     @titleVal={{this.title}}
@@ -47,6 +60,16 @@
   </tr>
   </thead>
   <tbody class="mainbody">
+  <small>updated array</small>
+  {{#each this.testArr as |v|}}
+      <tr>
+        <td>{{v.date}}</td>
+        <td>{{v.title}}</td>
+        <td>{{v.version}}</td>
+      </tr>
+  {{/each}}
+  <small>Original array bottom</small>
+  <hr>
     {{#each this.itRdNews as |v|}}
       <tr class="trbody">
         <td class="date">{{v.date}}</td>
