@@ -1,12 +1,10 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 .idea/
-config/
 app/todos.md
 package-lock.json
 .travis.yml
 .watchmanconfig
 .eslintignore
-.eslintrc.js
 .editorconfig
 # compiled output
 /dist/

@@ -1,0 +1,70 @@
+{{yield}}
+<h3>This is a Component and we are passing props and methods from the controller to this component</h3>
+<h2>second filter</h2>
+<FilterData @data={{@sortedAr}} ...arguments  />
+<label for="select-box">Show</label>
+<select name="" id="select-box" onchange={{action this.handleSelect}}>
+  {{#each this.valArr as |v index|}}
+      <option value={{v}} class="{{this.sik}}" id="opt-{{index}}">{{v}}</option>
+    {{/each}}
+</select>
+<table class="main-table">
+  <thead>
+  <tr>
+    <th {{action @sortProp this.date}} class={{if this.dateHeader 'selectHeader'}}>
+      {{@date}}
+      {{#if this.dateHeader}}
+        {{#if @isReversed}}
+          &uarr;
+        {{else}}
+          &darr;
+        {{/if}}
+      {{/if}}
+    </th>
+    <th {{action @sortProp  this.title}} class="{{if this.titleHeader 'selectHeader'}}">
+      {{@title}}
+      {{#if this.titleHeader}}
+        {{#if @isReversed}}
+          &uarr;
+        {{else}}
+          &darr;
+        {{/if}}
+      {{/if}}
+    </th>
+    <th {{action @sortProp  this.version}} class={{if this.versionHeader 'selectHeader'}}>
+      {{@version}}
+      {{#if this.versionHeader}}
+        {{#if @isReversed}}
+          &uarr;
+        {{else}}
+          &darr;
+        {{/if}}
+      {{/if}}
+    </th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody class="mainbody">
+  <small>updated array</small>
+  {{#each @testArr as |v|}}
+    <tr>
+      <td>{{v.date}}</td>
+      <td>{{v.title}}</td>
+      <td>{{v.version}}</td>
+    </tr>
+  {{/each}}
+  <small>Sorted Array</small>
+  {{#each @sortedAr as |v|}}
+    <tr class="trbody" id="trbody" >
+      <td class="date">{{v.date}}</td>
+      <td class="title">{{v.title}}</td>
+      <td class="version">{{v.version}}</td>
+      <td>
+        <EditAction @values={{v}} @act={{this.actionModal}} ...arguments />
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+<p {{action this.updateVal 'haha changed'}}>{{this.value}}</p>
+

@@ -15,7 +15,7 @@ export default class CreateRdNewsComponent extends Component {
     console.log(props);
     let passedObject =
     {
-        id:5,
+        id:11,
         date: this.args.dataVal,
         title:this.args.titleVal,
         version:this.args.versionVal
